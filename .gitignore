@@ -1,0 +1,23 @@
+# API keys / secrets
+leipovkey.txt
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Temporary files
+*.tmp
+*.log
+
+# IDE stuff
+.vscode/
+.idea/
+
+# OS junk
+Thumbs.db
+.DS_Store

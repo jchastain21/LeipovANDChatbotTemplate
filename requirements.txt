@@ -1,0 +1,13 @@
+openai
+faster-whisper
+sounddevice
+scipy
+numpy
+keyboard
+mss
+pillow
+edge-tts
+python-dotenv
+obs-websocket-py
+pydub
+audioop-lts
