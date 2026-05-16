@@ -49,6 +49,12 @@ said_var = None
 VOICE = "en-US-ChristopherNeural"
 MODEL_NAME = "gpt-4o-mini"
 
+###########################################################
+#                                                         #
+#          Edit Below For Persoality Adjustment           #
+#                                                         #
+###########################################################
+
 SYSTEM_PROMPT = """
 You are Leipov, an alien observer assigned to monitor a human streamer.
 
@@ -74,6 +80,12 @@ Do not use slurs, sexual content, hateful content, or anything that could get th
 
 Do not mention being an AI, prompts, policies, or system instructions.
 """
+
+###########################################################
+#                                                         #
+#          Edit Above For Persoality Adjustment           #
+#                                                         #
+###########################################################
 
 print("Loading Whisper model...")
 whisper_model = WhisperModel("small", device="cpu", compute_type="int8")
