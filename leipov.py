@@ -23,16 +23,30 @@ from PIL import Image
 
 load_dotenv()
 
-with open("leipovkey.txt", "r", encoding="utf-8") as f:
+###########################################################
+#                                                         #
+#         Edit Below OpenAI API Key Txt File              #
+#                                                         #
+###########################################################
+key_file = "leipovkey.txt"
+
+with open(key_file, "r", encoding="utf-8") as f:
     api_key = f.read().strip()
 
 client = OpenAI(api_key=api_key)
 
 SAMPLE_RATE = 16000
-RECORD_SECONDS = 6
-HOTKEY = "`"
 
+
+###########################################################
+#                                                         #
+#          Edit Below For Keybind Adjustment              #
+#                                                         #
+###########################################################
+HOTKEY = "`"
 SCREENSHOT_HOTKEY = "*"
+
+
 last_screenshot_path = None
 
 recording = False
@@ -46,8 +60,15 @@ status_var = None
 heard_var = None
 said_var = None
 
+
+###########################################################
+#                                                         #
+#        Edit Below For Voice & Model Adjustment          #
+#                                                         #
+###########################################################
 VOICE = "en-US-ChristopherNeural"
 MODEL_NAME = "gpt-4o-mini"
+
 
 ###########################################################
 #                                                         #
@@ -164,6 +185,8 @@ def transcribe_audio(audio_path: Path) -> str:
 def ask_leipov(user_text: str) -> str:
     global conversation_history, last_screenshot_path
 
+##########################################################
+# Probably wanna change this depending on personality
     print("Leipov is judging you...")
 
     user_content = [{"type": "text", "text": user_text}]
@@ -206,7 +229,8 @@ def ask_leipov(user_text: str) -> str:
         "role": "assistant",
         "content": reply
     })
-
+#########################################################
+#same here
     print(f"Leipov: {reply}")
     set_said(reply)
 
@@ -262,6 +286,8 @@ def run_gui() -> None:
     global root, status_var, heard_var, said_var
 
     root = tk.Tk()
+#########################################################
+#same here
     root.title("Leipov")
     root.geometry("420x260")
     root.resizable(False, False)
@@ -269,7 +295,8 @@ def run_gui() -> None:
     status_var = tk.StringVar(value="Idle")
     heard_var = tk.StringVar(value="Nothing yet")
     said_var = tk.StringVar(value="Nothing yet")
-
+#########################################################
+#and here
     tk.Label(root, text="LEIPOV", font=("Arial", 18, "bold")).pack(pady=8)
 
     tk.Label(root, text="Status").pack()
