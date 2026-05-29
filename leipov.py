@@ -422,7 +422,7 @@ def run_gui() -> None:
 def take_screenshot() -> Path:
     global last_screenshot_path
 
-    temp_path = "leipov_screen.jpg"
+    temp_path = Path("leipov_screen.jpg")
 
     with mss.MSS() as sct:
         monitor = sct.monitors[1]
